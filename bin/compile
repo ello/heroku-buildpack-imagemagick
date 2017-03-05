@@ -8,11 +8,21 @@ echo "-----> Install ImageMagick"
 
 BUILD_DIR=$1
 CACHE_DIR=$2
+ENV_DIR=$3
 VENDOR_DIR="$BUILD_DIR/vendor"
 mkdir -p $VENDOR_DIR
 INSTALL_DIR="$VENDOR_DIR/imagemagick"
 mkdir -p $INSTALL_DIR
-IMAGE_MAGICK_VERSION="${IMAGE_MAGICK_VERSION:-6.9.5-10}"
+if [ -d $ENV_DIR ]; then
+  ENV_FILE="$ENV_DIR/IMAGE_MAGICK_VERSION"
+  if [ -f $ENV_FILE ]; then
+    IMAGE_MAGICK_VERSION="`cat $ENV_FILE`"
+  else
+    IMAGE_MAGICK_VERSION="6.9.5-10"
+  fi
+else
+  IMAGE_MAGICK_VERSION="6.9.5-10"
+fi
 CACHE_FILE="$CACHE_DIR/imagemagick-$IMAGE_MAGICK_VERSION.tar.gz"
 
 if [ ! -f $CACHE_FILE ]; then
