@@ -15,7 +15,7 @@ CACHE_FILE="$CACHE_DIR/imagemagick.tar.gz"
 
 if [ ! -f $CACHE_FILE ]; then
   # install imagemagick
-  IMAGE_MAGICK_VERSION="${IMAGE_MAGICK_VERSION:-7.0.2-2}"
+  IMAGE_MAGICK_VERSION="${IMAGE_MAGICK_VERSION:-7.0.8-6}"
   IMAGE_MAGICK_FILE="ImageMagick-$IMAGE_MAGICK_VERSION.tar.gz"
   IMAGE_MAGICK_DIR="ImageMagick-$IMAGE_MAGICK_VERSION"
   # SSL cert used on imagemagick not recognized by heroku.
