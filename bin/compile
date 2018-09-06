@@ -63,6 +63,10 @@ cat > $INSTALL_DIR/policy.xml <<EOF
   <policy domain="coder" rights="none" pattern="HTTPS" />
   <policy domain="coder" rights="none" pattern="MVG" />
   <policy domain="coder" rights="none" pattern="MSL" />
+  <policy domain="coder" rights="none" pattern="PS" />
+  <policy domain="coder" rights="none" pattern="EPS" />
+  <policy domain="coder" rights="none" pattern="PDF" />
+  <policy domain="coder" rights="none" pattern="XPS" />
 </policymap>
 EOF
 
